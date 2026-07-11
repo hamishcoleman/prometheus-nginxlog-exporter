@@ -1,7 +1,7 @@
 Source: prometheus-nginxlog-exporter
 Section: utils
 Priority: optional
-Maintainer: Hamish Coleman <hamish.coleman@zerocap.com>
+Maintainer: Hamish Coleman <hamish@zot.org>
 Standards-Version: 4.6.0
 Build-Depends:
  golang,

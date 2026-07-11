@@ -48,7 +48,7 @@ CLEAN_FILES+=prometheus-nginxlog-exporter
 clean:
 	rm -f $(CLEAN_FILES)
 
-DEBEMAIL?=hamish.coleman@zerocap.com
+DEBEMAIL?=builder@example.com
 DEBFULLNAME?="Auto Build"
 export DEBEMAIL
 export DEBFULLNAME
