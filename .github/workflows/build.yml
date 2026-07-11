@@ -14,10 +14,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Set up Go
-        uses: actions/setup-go@v4
+        uses: actions/setup-go@v6
         with:
           go-version: 1.18.x
 
@@ -35,10 +35,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Set up Go
-        uses: actions/setup-go@v4
+        uses: actions/setup-go@v6
         with:
           go-version: 1.18.x
 
@@ -59,7 +59,7 @@ jobs:
       - name: Install Behave
         run: pip install behave requests
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Download build artifact
         uses: actions/download-artifact@v4
@@ -80,18 +80,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         
       - name: Unshallow
         run: git fetch --prune --unshallow
 
       - name: Set up Go
-        uses: actions/setup-go@v4
+        uses: actions/setup-go@v6
         with:
           go-version: 1.18.x
 
       - name: Validate Goreleaser config
-        uses: goreleaser/goreleaser-action@v5
+        uses: goreleaser/goreleaser-action@v7
         with:
           version: v1.11.5
           args: check
@@ -119,7 +119,7 @@ jobs:
           gpg --export-secret-key --armor helmich-bot@helmich.example > /tmp/signing-key
 
       - name: Build Goreleaser snapshot release
-        uses: goreleaser/goreleaser-action@v5
+        uses: goreleaser/goreleaser-action@v7
         with:
           version: v1.11.5
           args: release --rm-dist --skip-publish --snapshot
@@ -131,7 +131,7 @@ jobs:
     needs: test_acceptance
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
